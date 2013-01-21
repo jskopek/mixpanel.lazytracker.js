@@ -10,11 +10,15 @@ mixpanel.init("0518e2f80e602b269c29d57883336786");</script>
         <script type="text/javascript">
             $("document").ready(function() {
                 mixpanel.track("Visit", {"page": "home"});
+
+                // track links
+                $("a").click(function(e) { mixpanel.track("Click", {"target":$(e.target).attr("href")}); })
             });
         </script>
     </head>
     <body>
         <h1>Home Page</h1>
         <a href="media.html">Media Page</a>
+        <a href="landing.html">Landing Page</a>
     </body>
 </html>
